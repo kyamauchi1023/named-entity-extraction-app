@@ -1,7 +1,8 @@
+import datetime
+
+from ja_timex import TimexParser
 import pandas as pd
 import spacy
-import datetime
-from ja_timex import TimexParser
 
 
 LABEL_JP2EN = {

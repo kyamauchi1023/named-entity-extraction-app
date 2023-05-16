@@ -1,14 +1,20 @@
 # SET UP SERVER
 
-## Poetry
+## Poetryを用いたセットアップ
 
 ```shell
-$ poetry install
+$ poetry install  # パッケージをインストール
 $ poetry shell
-(.venv) bash-5.1$ poetry run uvicorn api.main:app --host 0.0.0.0 --reload
+$ poetry run uvicorn server.main:app --host 0.0.0.0 --reload  # サーバーを立ち上げ
 ```
 
-## Docker Hubの登録とDockerのインストール
+[http://localhost:8000/docs](http://localhost:8000/docs)にアクセスすると自動生成されたOAS(ドキュメント)が確認できる
+
+---
+
+## Docker+Poetryを用いたセットアップ
+
+### 0. Docker Hubの登録とDockerのインストール
 まずは、[Docker Hub](https://hub.docker.com/)のアカウント登録を行い、DockerおよびDocker Composeをインストールする（[参考](https://datawokagaku.com/startdocker/)）
 
   1. [Docker Hub](https://hub.docker.com/)にアクセスし、Sign Upフォームに記入をすると、Address verificationのメールが送られてくるので、Verifyする
@@ -17,7 +23,6 @@ $ poetry shell
 
   3. インストールが終わり次第、Docker Engineを起動させ、シェルで`docker login`コマンドを実行しログインをする
 
-## poetryによるPython環境のセットアップ
 
 ### 1. Dockerイメージをビルド（imageがない場合のみ）
 ```shell
@@ -45,7 +50,7 @@ $ docker-compose run --rm --entrypoint "poetry install" demo-app
 ```shell
 $ docker-compose up -d
 ```
-[http://localhost:8000/docs](http://localhost:8000/docs)にアクセスすると自動生成されたOASが確認できる。
+[http://localhost:8000/docs](http://localhost:8000/docs)にアクセスすると自動生成されたOASが確認できる
 
 ### 5. 追加でパッケージをインストール
 新しいPythonパッケージを追加したい場合などは以下のように`pyproject.toml`を更新

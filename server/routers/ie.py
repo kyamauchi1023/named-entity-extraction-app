@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
-import api.schemas.ie as ie_schema
+import server.schemas.ie as ie_schema
 
-import api.ner as ner
-import api.qa as qa
+import server.ner as ner
+import server.qa as qa
 
 
 router = APIRouter(

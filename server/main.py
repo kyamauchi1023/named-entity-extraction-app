@@ -1,9 +1,7 @@
-import os
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api.routers import ie
+from server.routers import ie
 
 
 app = FastAPI()
