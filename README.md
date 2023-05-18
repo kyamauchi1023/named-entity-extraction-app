@@ -1,4 +1,4 @@
-# SET UP SERVER
+# Named Entity Extraction API（固有表現抽出API）
 
 ## Poetryを用いたセットアップ
 
